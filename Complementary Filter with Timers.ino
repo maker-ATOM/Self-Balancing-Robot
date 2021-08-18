@@ -13,27 +13,30 @@ void setup()
 {
   mpu.initialize();
   Serial.begin(9600);
-
+  
+  //function to setup Timer2
   initTimer2();
-
 }
 
-void loop() {
-
+void loop() 
+{
+  //get raw data from mpu6050
   accZ = mpu.getAccelerationZ();
   accY = mpu.getAccelerationY();
-
   gyroX = mpu.getRotationX();
 
+  //calculate angualar speed in deg/sec
   gyroRate = gyroX / 131;
 
+  //calcualate tilt angle using accelerometer
   accAngle = atan2(accZ, -accY) * RAD_TO_DEG;
 
+  //complementary filter
   botAngle = 0.97 * (previousAngle + gyroAngle) + 0.03 * (accAngle);
   previousAngle = botAngle;
 
+  //print the calculated tilt angle
   Serial.println(botAngle);
-
 }
 
 ISR(TIMER2_COMPA_vect)
