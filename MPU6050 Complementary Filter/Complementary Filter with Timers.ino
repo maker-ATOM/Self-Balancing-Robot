@@ -41,6 +41,7 @@ void loop()
 
 ISR(TIMER2_COMPA_vect)
 {
+  //calculate angle using gyroscope
   gyroAngle = (float)gyroRate * 0.001;
 }
 
