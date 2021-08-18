@@ -1,3 +1,4 @@
+//include neccessary libraries
 #include "Wire.h"
 #include "I2Cdev.h"
 #include "MPU6050.h"
@@ -8,10 +9,8 @@ int accY, accZ, gyroX;
 float accAngle = 0, gyroAngle = 0, botAngle = 0, previousAngle = 0;
 float gyroRate = 0;
 
-
-
-void setup() {
-
+void setup() 
+{
   mpu.initialize();
   Serial.begin(9600);
 
