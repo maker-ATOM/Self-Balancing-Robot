@@ -1,6 +1,7 @@
 # Self-Balancing-Robot
 This repository contains all project files required for the build.
 
+Head here for a build details.
 https://www.instructables.com/The-Breadboarded-Self-Balancing-Robot/
 
 
