@@ -1,5 +1,4 @@
 //measures angle using only accelerometer
-//for self balancing robot with required orrentation
 
 #include "Wire.h"
 #include "I2Cdev.h"
